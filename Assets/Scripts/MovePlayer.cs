@@ -9,10 +9,10 @@ public class MovePlayer : MonoBehaviour
     public float jumpForce = 32f;
 
     // Update is called once per frame
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         Vector3 move = transform.right * Input.GetAxis("Horizontal") + transform.forward * Input.GetAxis("Vertical");
-
-        rigidbodyPlayer.velocity = move * speed  ;  
+        rigidbodyPlayer.velocity = move * speed;
         rigidbodyPlayer.velocity += Vector3.up * jumpForce * Input.GetAxis("Jump");
         //rigidbodyPlayer.AddForce(new Vector3(0f,Input.GetKeyDown(KeyCode.Space) && rigidbodyPlayer.velocity.y >= 0 ? jumpForce : 0f,0f),ForceMode.VelocityChange);     
     }
